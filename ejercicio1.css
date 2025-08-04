@@ -1,0 +1,26 @@
+/* Enlace no visitado */
+a:link {
+    color: darkgreen;      /* verde oscuro */
+    font-weight: bold;     /* negrita */
+  }
+  
+  /* Enlace visitado */
+  a:visited {
+    color: red;            /* rojo */
+    font-weight: bold;     /* negrita */
+  }
+  
+  /* Cuando el mouse pasa por encima */
+  a:hover {
+    color: red;            /* rojo */
+    font-weight: bold;     /* negrita */
+    font-style: italic;    /*itálica */
+  }
+  
+  /* Enlace activo (cuando se hace clic) */
+  a:active {
+    color: blue;           /* azul */
+    font-weight: bold;     /* negrita */
+    font-size: 2em;        /* doble tamaño */
+  }
+  
