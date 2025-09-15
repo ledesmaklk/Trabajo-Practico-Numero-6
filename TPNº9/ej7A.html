@@ -1,0 +1,54 @@
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 7a</title>
+</head>
+<body>
+  <h1>Meses del año</h1>
+  <ul id="lista"></ul>
+
+  <script>
+    function mostrarMeses() {
+      const meses = [
+        "Enero","Febrero","Marzo","Abril","Mayo","Junio",
+        "Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"
+      ];
+      const ul = document.getElementById("lista");
+
+      // for
+      for (let i = 0; i < meses.length; i++) {
+        let li = document.createElement("li");
+        li.textContent = meses[i] + " (for)";
+        ul.appendChild(li);
+      }
+
+      // while
+      let j = 0;
+      while (j < meses.length) {
+        let li = document.createElement("li");
+        li.textContent = meses[j] + " (while)";
+        ul.appendChild(li);
+        j++;
+      }
+
+      // do while
+      let k = 0;
+      do {
+        let li = document.createElement("li");
+        li.textContent = meses[k] + " (do while)";
+        ul.appendChild(li);
+        k++;
+      } while (k < meses.length);
+
+      // for in
+      for (let idx in meses) {
+        let li = document.createElement("li");
+        li.textContent = meses[idx] + " (for in)";
+        ul.appendChild(li);
+      }
+    }
+
+    window.onload = mostrarMeses;
+  </script>
+</body>
+</html>

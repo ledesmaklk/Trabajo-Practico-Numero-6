@@ -1,0 +1,16 @@
+<div id="factorial"></div>
+<script>
+  function factorial(n) {
+    if (n === 0) return 1;
+    return n * factorial(n - 1);
+  }
+
+  function mostrarFactorial() {
+    let num = 5; // ejemplo
+    let res = factorial(num);
+    document.getElementById("factorial").innerText =
+      `Factorial de ${num} = ${res}`;
+  }
+
+  window.onload = mostrarFactorial;
+</script>

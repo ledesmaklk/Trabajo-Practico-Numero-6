@@ -1,0 +1,66 @@
+<html>
+<head>
+    <title>Calculadora JS</title>
+    <script src="EjJavaScript005.js"></script>
+    <style>
+        body { font-family: Arial; }
+        .container { width: 300px; margin: 40px auto; padding: 20px; border: 1px solid #333; border-radius: 8px; }
+        textarea { width: 100%; height: 60px; margin-top: 10px; }
+        button { margin: 5px 0; width: 100%; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Calculadora</h2>
+        <button onclick="operar('suma')">Suma</button>
+        <button onclick="operar('resta')">Resta</button>
+        <button onclick="operar('division')">División</button>
+        <button onclick="operar('multiplicacion')">Multiplicación</button>
+        <button onclick="operar('potencia')">Potencia</button>
+        <button onclick="operar('cuadrado')">Cuadrado</button>
+        <textarea id="resultado" readonly></textarea>
+    </div>
+    <script>
+        function pedirNumero(mensaje) {
+            let valor = prompt(mensaje);
+            return Number(valor);
+        }
+        function operar(tipo) {
+            let res;
+            let x, y;
+            switch(tipo) {
+                case 'suma':
+                    x = pedirNumero('Ingrese el primer número:');
+                    y = pedirNumero('Ingrese el segundo número:');
+                    res = suma(x, y);
+                    break;
+                case 'resta':
+                    x = pedirNumero('Ingrese el primer número:');
+                    y = pedirNumero('Ingrese el segundo número:');
+                    res = resta(x, y);
+                    break;
+                case 'division':
+                    x = pedirNumero('Ingrese el numerador:');
+                    y = pedirNumero('Ingrese el denominador:');
+                    res = division(x, y);
+                    break;
+                case 'multiplicacion':
+                    x = pedirNumero('Ingrese el primer número:');
+                    y = pedirNumero('Ingrese el segundo número:');
+                    res = multiplicacion(x, y);
+                    break;
+                case 'potencia':
+                    x = pedirNumero('Ingrese la base:');
+                    y = pedirNumero('Ingrese el exponente:');
+                    res = potencia(x, y);
+                    break;
+                case 'cuadrado':
+                    x = pedirNumero('Ingrese el número:');
+                    res = cuadrado(x);
+                    break;
+            }
+            document.getElementById('resultado').value = 'Resultado: ' + res;
+        }
+    </script>
+</body>
+</html>

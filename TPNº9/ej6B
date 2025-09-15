@@ -1,0 +1,28 @@
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 6b</title>
+</head>
+<body>
+  <h1>Función valorSeleccionado</h1>
+  <button onclick="probarValor()">Probar función</button>
+  <div id="resultado"></div>
+
+  <script>
+    function valorSeleccionado(valor) {
+      if (valor < 0) return -1;
+      else if (valor >= 0 && valor < 10) return 0;
+      else if (valor >= 10 && valor < 50) return 1;
+      else if (valor >= 50 && valor < 100) return 2;
+      else return 3;
+    }
+
+    function probarValor() {
+      let numero = parseInt(prompt("Ingrese un número:"));
+      let res = valorSeleccionado(numero);
+      document.getElementById("resultado").innerHTML =
+        `<p>El valor seleccionado para ${numero} es: <b>${res}</b></p>`;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 8c</title>
+</head>
+<body>
+  <h1>Detección de navegador</h1>
+  <script>
+    let navegador = navigator.userAgent;
+
+    if (navegador.includes("MSIE") || navegador.includes("Trident")) {
+      window.location.href = "http://www.microsoft.com/ie";
+    } else if (navegador.includes("Firefox")) {
+      window.location.href = "http://www.mozilla.com/firefox/";
+    } else if (navegador.includes("Konqueror")) {
+      window.location.href = "http://konqueror.org";
+    } else {
+      document.write("Browser desconocido");
+    }
+  </script>
+</body>
+</html>

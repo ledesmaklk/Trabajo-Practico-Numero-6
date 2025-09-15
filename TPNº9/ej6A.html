@@ -1,0 +1,31 @@
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 6a</title>
+</head>
+<body>
+  <h1>Acceso con contraseña</h1>
+  <button onclick="pedirClave()">Ingresar</button>
+  <div id="contenido"></div>
+
+  <script>
+    function pedirClave() {
+      let clave = prompt("Ingrese la contraseña:");
+
+      if (clave === "minombre") {
+        // Si la clave es correcta, mostramos los datos personales
+        document.getElementById("contenido").innerHTML = `
+          <h2>Datos Personales</h2>
+          <p><b>Nombre:</b> Juan Pérez</p>
+          <p><b>Edad:</b> 20</p>
+          <p><b>Email:</b> juan@example.com</p>
+        `;
+      } else {
+        // Si es incorrecta, mostramos un mensaje de error
+        document.getElementById("contenido").innerHTML =
+          "<p style='color:red;'>Contraseña incorrecta</p>";
+      }
+    }
+  </script>
+</body>
+</html>

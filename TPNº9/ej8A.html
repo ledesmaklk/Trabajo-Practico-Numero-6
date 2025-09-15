@@ -1,0 +1,30 @@
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 8a</title>
+</head>
+<body>
+  <h1>Colores</h1>
+  <ul id="colores">
+    <li>Blanco</li>
+    <li>Negro</li>
+    <li>Azul</li>
+    <li>Rojo</li>
+    <li>Amarillo</li>
+  </ul>
+
+  <script>
+    const lista = document.getElementById("colores");
+
+    lista.querySelectorAll("li").forEach(item => {
+      item.addEventListener("mouseover", () => {
+        lista.style.backgroundColor = item.textContent.toLowerCase();
+      });
+
+      item.addEventListener("mouseout", () => {
+        lista.style.backgroundColor = "white"; // vuelve al fondo blanco
+      });
+    });
+  </script>
+</body>
+</html>

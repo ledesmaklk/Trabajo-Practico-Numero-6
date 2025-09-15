@@ -1,0 +1,20 @@
+<div id="primos"></div>
+<script>
+  function esPrimo(num) {
+    if (num < 2) return false;
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+      if (num % i === 0) return false;
+    }
+    return true;
+  }
+
+  function mostrarPrimos() {
+    let lista = "";
+    for (let i = 2; i < 100; i++) {
+      if (esPrimo(i)) lista += i + " ";
+    }
+    document.getElementById("primos").innerText = lista;
+  }
+
+  window.onload = mostrarPrimos;
+</script>

@@ -1,0 +1,61 @@
+<html>
+<head>
+    <title>Conversor Monetario</title>
+    <style>
+        body { font-family: Arial; }
+        .container { width: 350px; margin: 40px auto; padding: 20px; border: 1px solid #333; border-radius: 8px; }
+        input, select, button { width: 100%; margin: 8px 0; padding: 8px; }
+        textarea { width: 100%; height: 50px; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Conversor Monetario</h2>
+        <input type="number" id="cantidad" placeholder="Ingrese el monto" />
+        <select id="conversion">
+            <option value="p2d">Pesos a Dólares</option>
+            <option value="d2p">Dólares a Pesos</option>
+            <option value="p2r">Pesos a Reales</option>
+            <option value="r2p">Reales a Pesos</option>
+            <option value="p2e">Pesos a Euros</option>
+            <option value="e2p">Euros a Pesos</option>
+        </select>
+        <button onclick="convertir()">Convertir</button>
+        <textarea id="resultado" readonly></textarea>
+    </div>
+    <script>
+        // Valores de ejemplo, puedes actualizarlos según la cotización actual
+        const cotizaciones = {
+            dolar: 900,    // 1 USD = 900 ARS
+            real: 180,     // 1 BRL = 180 ARS
+            euro: 1000     // 1 EUR = 1000 ARS
+        };
+        function convertir() {
+            let cantidad = Number(document.getElementById('cantidad').value);
+            let tipo = document.getElementById('conversion').value;
+            let resultado = '';
+            switch(tipo) {
+                case 'p2d':
+                    resultado = (cantidad / cotizaciones.dolar).toFixed(2) + ' USD';
+                    break;
+                case 'd2p':
+                    resultado = (cantidad * cotizaciones.dolar).toFixed(2) + ' ARS';
+                    break;
+                case 'p2r':
+                    resultado = (cantidad / cotizaciones.real).toFixed(2) + ' BRL';
+                    break;
+                case 'r2p':
+                    resultado = (cantidad * cotizaciones.real).toFixed(2) + ' ARS';
+                    break;
+                case 'p2e':
+                    resultado = (cantidad / cotizaciones.euro).toFixed(2) + ' EUR';
+                    break;
+                case 'e2p':
+                    resultado = (cantidad * cotizaciones.euro).toFixed(2) + ' ARS';
+                    break;
+            }
+            document.getElementById('resultado').value = 'Resultado: ' + resultado;
+        }
+    </script>
+</body>
+</html>

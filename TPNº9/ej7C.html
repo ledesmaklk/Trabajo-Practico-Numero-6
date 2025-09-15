@@ -1,0 +1,13 @@
+<div id="fx"></div>
+<script>
+  function mostrarFuncion() {
+    let resultado = "";
+    for (let x = 0; x < 100; x++) {
+      let fx = 3 * x + 5 - (x * x);
+      resultado += `f(${x}) = ${fx}<br>`;
+    }
+    document.getElementById("fx").innerHTML = resultado;
+  }
+
+  window.onload = mostrarFuncion;
+</script>

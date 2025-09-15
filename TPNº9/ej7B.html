@@ -1,0 +1,12 @@
+<div id="pares"></div>
+<script>
+  function mostrarPares() {
+    let salida = "";
+    for (let i = 2; i < 500; i += 2) {
+      salida += i + " ";
+    }
+    document.getElementById("pares").innerText = salida;
+  }
+
+  window.onload = mostrarPares;
+</script>
